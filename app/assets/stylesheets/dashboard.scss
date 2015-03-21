@@ -34,11 +34,25 @@
 .icon-center{
 	text-align: center
 }
-.nav-sidebar li a{
-  color: #eee;
+
+.desactive{
+	color: #eee;
+  background-color: #222 ;
+}
+
+.nav-sidebar li :hover{
+  color: #222;
+  background-color: #eee;
 }
 .active{
   color: #222;
+  background-color: #eee;
+}
+.link-black{
+	color: #222;
+}
+.link-white{
+	color: #eee;
 }
 // .widget-active{
 //   z-index: 100;
