@@ -7,11 +7,29 @@
 }
 
 .widget{
-	
 }
 
-.widget-container{
-	margin: 5px;
-	background-color: red;
-	height: 250px;
+// .widget-active{
+//   z-index: 100;
+//   position: absolute;
+//   width: 65vw !important;
+//   height: 50vh !important;
+//   margin: 0 !important;
+//   left: 20vw;
+//   top: 25vh;
+//   transform:scale(1.4);
+// }
+
+// .widget-container{
+// 	margin: 5px;
+// 	background-color: red;
+// 	height: 80%;
+// 	transition: all 0.7s ease;
+// }
+
+.inner-widget-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
