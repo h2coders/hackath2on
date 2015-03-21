@@ -4,9 +4,12 @@
 $(document).ready(function() {
   $(".widget-container").on( "click", function(){
     $(this).addClass( "widget-active" );
+    $(this).parent().removeClass( "col-md-4" );
   });
 
   $(".close").on( "click", function(){
-    $(".widget-active").removeClass( "widget-active" );
+    $(this).parent().removeClass( "widget-active" );
+    $(this).parent().parent().addClass( "col-md-4" );
+    alert("gola")
   });
 });

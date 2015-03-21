@@ -12,13 +12,12 @@
 
 .widget-active{
   width: 100vw;
-  height: calc(100vh - 66px);
+  height: calc(100vh - 66px) !important;
   z-index: 100;
   position: absolute;
-  top: 0;
+  top: 66px;
   left: 0;
-  transform: translateX(0%);
-  transition: transform 0.3s;
+  margin: 0 !important;
 }
 
 .widget-container{
