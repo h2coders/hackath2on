@@ -1,6 +1,11 @@
 // Place all the styles related to the dashboard controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.main-container{
+	width: 90%;
+	margin: auto;
+}
+
 .widget{
 	
 }
@@ -8,4 +13,5 @@
 .widget-container{
 	margin: 5px;
 	background-color: red;
+	height: 250px;
 }
