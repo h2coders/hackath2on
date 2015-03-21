@@ -1,7 +1,10 @@
 ﻿<div class ="container">
     <div class="row">
-      <div class="col-md-4" style="background-color:red">.col-md-4</div>
-      <div class="col-md-4" style="background-color:green">.col-md-4</div>
-      <div class="col-md-4" style="background-color:blue">.col-md-4</div>
+      <div class="col-md-4 widget"><div class="widget-container"><%= render partial: "dashboard/tables/homes" %></div></div>
+      <div class="col-md-4 widget"><div class="widget-container"><%= render partial: "dashboard/tables/last_one" %></div></div>
+      <div class="col-md-4 widget"><div class="widget-container"><%= render partial: "dashboard/tables/reward" %></div></div>
+      <div class="col-md-4 widget"><div class="widget-container"><%= render partial: "dashboard/tables/system" %></div></div>
+      <div class="col-md-4 widget"><div class="widget-container"><%= render partial: "dashboard/tables/total_saving" %></div></div>
+      <div class="col-md-4 widget"><div class="widget-container"><%= render partial: "dashboard/tables/week" %></div></div>
     </div>
 </div>
