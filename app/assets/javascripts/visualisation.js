@@ -3,8 +3,11 @@ var ready;
 
 ready = function() {
 
-var width = 380,
-    height = 300-50;
+// var width = 380,
+//     height = 300-50;
+
+var width = $("#system").parent().parent().width(),
+      height = 250;
 
 var margin = {top: 20, right:20, bottom:20, left:50};
 
