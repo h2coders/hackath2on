@@ -2,14 +2,14 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready(function() {
-  $(".widget-container").on( "click", function(){
+  $(".widget-container").on("click", function(){
     $(this).addClass( "widget-active" );
     $(this).parent().removeClass( "col-md-4" );
   });
 
-  $(".close").on( "click", function(){
+  $(".close").on( "click", function(e){
     $(this).parent().removeClass( "widget-active" );
     $(this).parent().parent().addClass( "col-md-4" );
-    alert("gola")
+     e.stopPropagation();
   });
 });

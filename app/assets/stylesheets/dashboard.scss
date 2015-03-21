@@ -7,21 +7,25 @@
 }
 
 .widget{
-	
 }
 
 .widget-active{
-  width: 100vw;
-  height: calc(100vh - 66px) !important;
   z-index: 100;
   position: absolute;
-  top: 66px;
-  left: 0;
+  width: 65vw !important;
+  height: 50vh !important;
   margin: 0 !important;
+  left:250px;
+  top:200px;
+  -webkit-transform:scale(1.4);
+	transform:scale(1.4);
 }
 
 .widget-container{
 	margin: 5px;
 	background-color: red;
 	height: 250px;
+	width: 400px;
+	-webkit-transition: all 0.7s ease;
+transition: all 0.7s ease;
 }
