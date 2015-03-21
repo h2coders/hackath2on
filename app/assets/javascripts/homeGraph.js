@@ -3,7 +3,7 @@ var ready;
 
 ready = function() {
 
-var width = $("#home").parent().parent().width(),
+var width = $("#home").parent().parent().width() - 10,
     height = 400;
 
 var margin = {top: 20, right:20, bottom:20, left:50};
@@ -18,7 +18,7 @@ var svg = d3.select("#home").append("svg")
 svg.append("rect")
     .attr("width", "100%")
     .attr("height", "100%")
-    .attr("fill", "#111111");
+    .attr("fill", "#00a9b8");
 
 var xScale = d3.scale.linear()
       .range([0,width - margin.left - margin.right]);
