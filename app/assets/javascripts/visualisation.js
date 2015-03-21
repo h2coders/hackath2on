@@ -4,7 +4,7 @@ var ready;
 ready = function() {
 
 var width = 500,
-    height = 300-37;
+    height = 300-50;
 
 var margin = {top: 20, right:20, bottom:20, left:50};
 
@@ -19,7 +19,7 @@ var xScale = d3.scale.linear()
       .range([0,width - margin.left - margin.right]);
 
 var yScale = d3.scale.linear()
-      .range([height - margin.top - margin.bottom,0]);
+      .range([height - margin.top - margin.bottom, 0]);
 
 var line = d3.svg.line().interpolate("monotone")
   .x(function(d){ return xScale(d.time); })
@@ -28,8 +28,59 @@ var line = d3.svg.line().interpolate("monotone")
 // create random data
 function newData(numberOfLines, numberOfPoints){
   return d3.range(numberOfLines).map(function(){
-    return d3.range(numberOfPoints).map(function(item,idx){
-      return {time:idx/(numberOfPoints-1),usage:Math.random()*100};
+    return d3.range(numberOfPoints).map(function(item, hour){
+      var time = hour*3600;
+
+      var totalConsumtion = 0;
+      if(time<=3600){
+        totalConsumtion = 400 + Math.floor(Math.random()*350);
+      }else if(time>3600 && time<=7200){
+        totalConsumtion = 600 + Math.floor(Math.random()*350);
+      }else if(time>7200 && time<=10800){
+        totalConsumtion = 700 + Math.floor(Math.random()*350);
+      }else if(time>10800 && time<=14400){
+        totalConsumtion = 950 + Math.floor(Math.random()*350);
+      }else if(time>14400 && time<=18000){
+        totalConsumtion = 1300 + Math.floor(Math.random()*350);
+      }else if(time>18000 && time<=21600){
+        totalConsumtion = 1700 + Math.floor(Math.random()*350);
+      }else if(time>21600 && time<=25200){
+        totalConsumtion = 1900 + Math.floor(Math.random()*350);
+      }else if(time>25200 && time<=28800){
+        totalConsumtion = 2900 + Math.floor(Math.random()*350);
+      }else if(time>28800 && time<=32400){
+        totalConsumtion = 2500 + Math.floor(Math.random()*350);
+      }else if(time>32400 && time<=36000){
+        totalConsumtion = 2100 + Math.floor(Math.random()*350);
+      }else if(time>36000 && time<=39600){
+        totalConsumtion = 1800 + Math.floor(Math.random()*350);
+      }else if(time>39600 && time<=43200){
+        totalConsumtion = 1300 + Math.floor(Math.random()*350);
+      }else if(time>43200 && time<=46800){
+        totalConsumtion = 1200 + Math.floor(Math.random()*350);
+      }else if(time>46800 && time<=50400){
+        totalConsumtion = 1800 + Math.floor(Math.random()*350);
+      }else if(time>50400 && time<=54000){
+        totalConsumtion = 1300 + Math.floor(Math.random()*350);
+      }else if(time>54000 && time<=57600){
+        totalConsumtion = 1200 + Math.floor(Math.random()*350);
+      }else if(time>57600 && time<=61200){
+        totalConsumtion = 1100 + Math.floor(Math.random()*350);
+      }else if(time>61200 && time<=64800){
+        totalConsumtion = 1000 + Math.floor(Math.random()*350);
+      }else if(time>64800 && time<=68400){
+        totalConsumtion = 1100 + Math.floor(Math.random()*350);
+      }else if(time>68400 && time<=72000){
+        totalConsumtion = 1000 + Math.floor(Math.random()*350);
+      }else if(time>72000 && time<=75600){
+        totalConsumtion = 900 + Math.floor(Math.random()*350);
+      }else if(time>75600 && time<=79200){
+        totalConsumtion = 700 + Math.floor(Math.random()*350);
+      }else if(time>79200 && time<=82800){
+        totalConsumtion = 400 + Math.floor(Math.random()*350);
+      }
+
+      return {time:hour,usage: totalConsumtion};
     });
   });
 }
@@ -57,15 +108,18 @@ function newData(numberOfLines, numberOfPoints){
 function render(){
 
 
- var data = newData(1,10);
+ var data = newData(1,24);
 
  // console.log(data);
   // set domain for axis
-  yScale.domain([0,100]);
-
+  yScale.domain([0,3000]);
+  xScale.domain([0,24])
   // create axis scale
   var yAxis = d3.svg.axis()
       .scale(yScale).orient("left");
+
+  var xAxis = d3.svg.axis()
+      .scale(xScale).orient("bottom");
 
 
   // if no axis exists, create one, otherwise update it
@@ -73,6 +127,10 @@ function render(){
     svg.append("g")
         .attr("class","y axis")
         .call(yAxis);
+    svg.append("g")
+       .attr("class", "x axis")
+       .attr("transform", "translate(0," + (height-margin.top-margin.bottom) + ")")
+       .call(xAxis);
   } else {
     svg.selectAll(".y.axis").transition().duration(1500).call(yAxis);
   }
