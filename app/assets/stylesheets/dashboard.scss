@@ -10,6 +10,17 @@
 	
 }
 
+.widget-active{
+  width: 100vw;
+  height: calc(100vh - 66px);
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateX(0%);
+  transition: transform 0.3s;
+}
+
 .widget-container{
 	margin: 5px;
 	background-color: red;

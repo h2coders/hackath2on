@@ -2,7 +2,11 @@
 // # All this logic will automatically be available in application.js.
 // # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).ready(function() {
-    $('.widget').click(function() {
-         $(this).addClass( "widget-active" );
-    });
+  $(".widget-container").on( "click", function(){
+    $(this).addClass( "widget-active" );
+  });
+
+  $(".close").on( "click", function(){
+    $(".widget-active").removeClass( "widget-active" );
+  });
 });
