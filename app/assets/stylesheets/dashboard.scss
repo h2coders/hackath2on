@@ -16,12 +16,18 @@
 }
 
 .dashboard{
-  position: absolute;
-  min-width: 100%;
+  width: 100%;
+}
+
+.dashboard ul li{
+  display: inline-block;
 }
 
 .widget{
+  height: 300px;
+  display: block;
 }
+
 .nav-sidebar-img{
   width: 60%;
   display:block;
@@ -36,7 +42,7 @@
 	position: fixed;
   top: 65px;
   left: 0;
-  width: 225px;
+  width: 180px;
   height: 100%;
   border: none;
   border-radius: 0;
@@ -66,27 +72,17 @@
 .link-white{
 	color: #eee;
 }
-// .widget-active{
-//   z-index: 100;
-//   position: absolute;
-//   width: 65vw !important;
-//   height: 50vh !important;
-//   margin: 0 !important;
-//   left: 20vw;
-//   top: 25vh;
-//   transform:scale(1.4);
-// }
-
-// .widget-container{
-// 	margin: 5px;
-// 	background-color: red;
-// 	height: 80%;
-// 	transition: all 0.7s ease;
-// }
 
 .inner-widget-container{
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+}
+.widgets-container{
+	position:absolute;
+	left:180px;
+	top:66px;
+	width:80%;
+	height:900px;
 }
