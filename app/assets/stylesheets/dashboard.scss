@@ -10,7 +10,15 @@
 	width: 100%;
 }
 
+.dashboard{
+  position: absolute;
+  min-width: 100%;
+}
+
 .widget{
+}
+.sidebar{
+  z-index: 102;
 }
 .sidebar-wrapper{
 	position: fixed;
@@ -25,6 +33,12 @@
 }
 .icon-center{
 	text-align: center
+}
+.nav-sidebar li a{
+  color: #eee;
+}
+.active{
+  color: #222;
 }
 // .widget-active{
 //   z-index: 100;
