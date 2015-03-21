@@ -14,47 +14,13 @@
 .main-container{
 	width: 100%;
 }
-.sidebar-wrapper{
-  position: fixed;
-  top: 65px;
-  left: 0;
-  width: 10%;
-  height: 100%;
-  border: none;
-  z-index: 102;
-  border-radius: 0;
-  overflow-y: auto;
-  background-color: #222;
-}
+
 .dashboard{
-  position: relative;
-  float: right;
-  width: 90%;
-  height: 100%;
-  padding: 10px;
+  position: absolute;
+  min-width: 100%;
 }
 
 .widget{
-  display: inline-block;
-  max-width: 100%;
-}
-#home{
-  width: 200px;
-}
-#last_one{
-  width: 100px;
-}
-#reward{
-  width: 300px;
-}
-#system{
-  width: 200px;
-}
-#total_saving{
-  width: 400px;
-}
-#week{
-  width: 200px;
 }
 .nav-sidebar-img{
   width: 60%;
@@ -62,6 +28,20 @@
   margin:auto;
   margin-top: 20px;
   margin-bottom: 20px;
+}
+.sidebar{
+  z-index: 102;
+}
+.sidebar-wrapper{
+	position: fixed;
+  top: 65px;
+  left: 0;
+  width: 225px;
+  height: 100%;
+  border: none;
+  border-radius: 0;
+  overflow-y: auto;
+  background-color: #222;
 }
 .icon-center{
 	text-align: center
