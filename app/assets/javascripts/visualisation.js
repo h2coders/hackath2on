@@ -108,7 +108,7 @@ function newData(numberOfLines, numberOfPoints){
 function render(){
 
 
- var data = newData(1,24);
+ var data = newData(1,25);
 
  // console.log(data);
   // set domain for axis
@@ -123,6 +123,12 @@ function render(){
         .attr("y", 0 )
         .style("text-anchor", "middle")
         .html("m&sup3;"+"/hour");
+
+  svg.append("text")      // text label for the x axis
+        .attr("x", 280 )
+        .attr("y", 200 )
+        .style("text-anchor", "middle")
+        .html("hour");
 
   var yAxis = d3.svg.axis()
       .scale(yScale).orient("left");
