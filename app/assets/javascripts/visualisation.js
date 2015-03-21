@@ -1,3 +1,8 @@
+var ready;
+
+
+ready = function() {
+
 var width = 500,
     height = 300-37;
 
@@ -52,15 +57,16 @@ function newData(numberOfLines, numberOfPoints){
 function render(){
 
 
- var data = newData(1,20);
+ var data = newData(1,10);
 
-
+ // console.log(data);
   // set domain for axis
   yScale.domain([0,100]);
 
   // create axis scale
   var yAxis = d3.svg.axis()
       .scale(yScale).orient("left");
+
 
   // if no axis exists, create one, otherwise update it
   if (svg.selectAll(".y.axis")[0].length < 1 ){
@@ -105,3 +111,10 @@ render();
 
 // continuous page render
 setInterval(render, 1500);
+
+} 
+
+         
+
+$(document).ready(ready);
+$(document).on('page:load', ready);
