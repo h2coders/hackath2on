@@ -17,3 +17,8 @@
 @import "_variables.scss";
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "jquery.gridster.min";
+
+body{
+	padding-top: 70px;
+}
