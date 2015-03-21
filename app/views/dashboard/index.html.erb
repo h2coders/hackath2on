@@ -1,10 +1,88 @@
 <div class="main-container">
     <div class="row">
-      <div class="col-md-4 widget"><div class="widget-container"><i class="fa fa-times close"></i><%= render partial: "dashboard/tables/homes" %></div></div>
-      <div class="col-md-4 widget"><div class="widget-container"><%= render partial: "dashboard/tables/last_one" %></div></div>
-      <div class="col-md-4 widget"><div class="widget-container"><%= render partial: "dashboard/tables/reward" %></div></div>
-      <div class="col-md-4 widget"><div class="widget-container"><%= render partial: "dashboard/tables/system" %></div></div>
-      <div class="col-md-4 widget"><div class="widget-container"><%= render partial: "dashboard/tables/total_saving" %></div></div>
-      <div class="col-md-4 widget"><div class="widget-container"><%= render partial: "dashboard/tables/week" %></div></div>
+      <div class="col-md-4 widget">
+        <div class="widget-container">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+            </div>
+            <div class="panel-body">
+              <div class="inner-widget-container">
+                <%= render partial: "dashboard/tables/homes" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 widget">
+        <div class="widget-container">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+            </div>
+            <div class="panel-body">
+              <div class="inner-widget-container">
+                <%= render partial: "dashboard/tables/last_one" %>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 widget">
+        <div class="widget-container">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+            </div>
+            <div class="panel-body">
+              <div class="inner-widget-container">
+                <%= render partial: "dashboard/tables/reward" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 widget">
+        <div class="widget-container">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+            </div>
+            <div class="panel-body">
+              <div class="inner-widget-container">
+                <%= render partial: "dashboard/tables/system" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 widget">
+        <div class="widget-container">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+            </div>
+            <div class="panel-body">
+              <div class="inner-widget-container">
+                <%= render partial: "dashboard/tables/total_saving" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 widget">
+        <div class="widget-container">
+          <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+            </div>
+            <div class="panel-body">
+              <div class="inner-widget-container">
+                <%= render partial: "dashboard/tables/week" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 </div>

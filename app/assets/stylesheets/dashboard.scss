@@ -9,23 +9,26 @@
 .widget{
 }
 
-.widget-active{
-  z-index: 100;
-  position: absolute;
-  width: 65vw !important;
-  height: 50vh !important;
-  margin: 0 !important;
-  left:250px;
-  top:200px;
-  -webkit-transform:scale(1.4);
-	transform:scale(1.4);
-}
+// .widget-active{
+//   z-index: 100;
+//   position: absolute;
+//   width: 65vw !important;
+//   height: 50vh !important;
+//   margin: 0 !important;
+//   left: 20vw;
+//   top: 25vh;
+//   transform:scale(1.4);
+// }
 
-.widget-container{
-	margin: 5px;
-	background-color: red;
-	height: 250px;
-	width: 400px;
-	-webkit-transition: all 0.7s ease;
-transition: all 0.7s ease;
+// .widget-container{
+// 	margin: 5px;
+// 	background-color: red;
+// 	height: 80%;
+// 	transition: all 0.7s ease;
+// }
+
+.inner-widget-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
