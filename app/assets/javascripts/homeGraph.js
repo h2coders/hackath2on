@@ -26,9 +26,11 @@ var xScale = d3.scale.linear()
 var yScale = d3.scale.linear()
       .range([height - margin.top - margin.bottom, 0]);
 
-var line = d3.svg.line().interpolate("monotone")
+var area = d3.svg.area()
+  .interpolate("monotone")
   .x(function(d){ return xScale(d.time); })
-  .y(function(d){ return yScale(d.usage); });
+  .y0(height - margin.top - margin.bottom)
+  .y1(function(d){ return yScale(d.usage); });
 
 // create random data
 function newData(numberOfLines, numberOfPoints){
@@ -83,9 +85,12 @@ function newData(numberOfLines, numberOfPoints){
         totalConsumtion = 700 + Math.floor(Math.random()*350);
       }else if(time>79200 && time<=82800){
         totalConsumtion = 400 + Math.floor(Math.random()*350);
+      }else{
+        totalConsumtion = 400 + Math.floor(Math.random()*350);
       }
 
-      return {time:hour,usage: totalConsumtion};
+
+      return {time: hour, usage: totalConsumtion};
     });
   });
 }
@@ -112,7 +117,7 @@ function newData(numberOfLines, numberOfPoints){
 
 function render(){
 
- var data = newData(1,24);
+ var data = newData(1,25);
 
  // console.log(data);
   // set domain for axis
@@ -143,19 +148,19 @@ function render(){
   }
 
   // generate line paths
-  var lines = svg.selectAll(".line").data(data).attr("class","line");
+  var lines = svg.selectAll(".area").data(data).attr("class","area");
 
 
   // transition from previous paths to new paths
   lines.transition().duration(2000)
-    .attr("d",line)
+    .attr("d", area)
     .style("stroke", "white");
     
   // enter any new data
   lines.enter()
     .append("path")
-    .attr("class","line")
-    .attr("d",line)
+    .attr("class","area")
+    .attr("d", area)
     .style("stroke", "white");
 
   // console.log(lines.data());
