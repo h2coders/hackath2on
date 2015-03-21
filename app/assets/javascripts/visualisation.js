@@ -132,7 +132,7 @@ function render(){
        .attr("transform", "translate(0," + (height-margin.top-margin.bottom) + ")")
        .call(xAxis);
   } else {
-    svg.selectAll(".y.axis").transition().duration(1500).call(yAxis);
+    svg.selectAll(".y.axis").transition().duration(1000).call(yAxis);
   }
 
   // generate line paths
@@ -144,7 +144,7 @@ function render(){
 
 
   // transition from previous paths to new paths
-  lines.transition().duration(5000)
+  lines.transition().duration(1000)
     .attr("d",line)
     .style("stroke", "white");
     
@@ -168,7 +168,7 @@ function render(){
 render();
 
 // continuous page render
-setInterval(render, 1500);
+setInterval(render, 1000);
 
 } 
 
