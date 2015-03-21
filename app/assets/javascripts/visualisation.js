@@ -3,7 +3,7 @@ var ready;
 
 ready = function() {
 
-var width = 500,
+var width = 380,
     height = 300-50;
 
 var margin = {top: 20, right:20, bottom:20, left:50};
@@ -121,6 +121,8 @@ function render(){
   var xAxis = d3.svg.axis()
       .scale(xScale).orient("bottom");
 
+  svg.selectAll('.axis line, .axis path')
+     .style({'stroke': 'white', 'fill': 'none', 'stroke-width': '1px'});
 
   // if no axis exists, create one, otherwise update it
   if (svg.selectAll(".y.axis")[0].length < 1 ){
