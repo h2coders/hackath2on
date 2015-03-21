@@ -16,11 +16,34 @@
 }
 
 .dashboard{
-  position: absolute;
-  min-width: 100%;
+  width: 100%;
+}
+
+.dashboard ul li{
+  display: inline-block;
 }
 
 .widget{
+  height: 300px;
+  display: block;
+}
+#home{
+  width: 200px;
+}
+#last_one{
+  width: 100px;
+}
+#reward{
+  width: 300px;
+}
+#system{
+  width: 200px;
+}
+#total_saving{
+  width: 400px;
+}
+#week{
+  width: 200px;
 }
 .nav-sidebar-img{
   width: 60%;
