@@ -1,11 +1,94 @@
 <div class="main-container">
+  <div class="col-sm-2 sidebar">
     <div class ="sidebar-wrapper">
       <ul class="nav nav-sidebar">
-        <li class="nav-sidebar-img"><%= image_tag "icon.svg" %></li>
+        <li><%= image_tag "icon.svg", :class=>"nav-sidebar-img" %></li>
         <li class="active"><a class="link-black icon-center"href="/"><i class="fa fa-tachometer fa-4x"></i><p class="text-center">Dashboard</p></a></li>
         <li class="desactive"><a class="link-white icon-center" href="#"><i class="fa fa-envelope-o fa-4x"></i><p class="text-center">Test</p></a></li>
         <li class="desactive"><a class="link-white icon-center" href="#"><i class="fa fa-calendar fa-4x"></i><p class="text-center">Test</p></a></li>
-        <li class="desactive"><a class="link-white icon-center" href="#"><i class="fa fa-wrench fa-4x"></i><p class="text-center">Test</p></a></li>
+        <li class="desactive"><a class="link-white icon-center" href="#"><i class="fa fa-wrench fa-4x"></i><p class="text-center">Tests</p></a></li>
       </ul>
+      <ul class="nav nav-sidebar">
     </div>
+  </div>
+  <div class="widgets-container">
+    <div class="dashboard">
+      <div class="gridster">
+        <ul class="list-unstyled">
+          <li class="widget" data-row="1" data-col="1" data-sizex="6" data-sizey="3">
+            <div class="widget-container">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+                </div>
+                <div class="inner-widget-container home-panel">
+                  <%= render partial: "dashboard/tables/homes" %>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="widget" data-row="1" data-col="2" data-sizex="3" data-sizey="3">
+            <div class="widget-container">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+                </div>
+                <div class="inner-widget-container">
+                  <%= render partial: "dashboard/tables/last_one" %>
+                </div> 
+              </div>
+            </div>
+          </li>
+          <li class="widget" data-row="1" data-col="1" data-sizex="3" data-sizey="3">
+            <div class="widget-container">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+                </div>
+                <div class="inner-widget-container reward">
+                  <%= render partial: "dashboard/tables/reward" %>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="widget" data-row="1" data-col="1" data-sizex="3" data-sizey="3">
+            <div class="widget-container">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+                </div>
+                <div class="inner-widget-container">
+                  <%= render partial: "dashboard/tables/system" %>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="widget" data-row="1" data-col="1" data-sizex="3" data-sizey="3">
+            <div class="widget-container">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+                </div>
+                <div class="inner-widget-container">
+                  <%= render partial: "dashboard/tables/total_saving" %>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="widget" data-row="1" data-col="1" data-sizex="3" data-sizey="3">
+            <div class="widget-container">
+              <div class="panel panel-primary">
+                <div class="panel-heading">
+                  <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+                </div>
+                <div class="inner-widget-container">
+                  <%= render partial: "dashboard/tables/week" %>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>

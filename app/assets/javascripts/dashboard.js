@@ -17,6 +17,6 @@ $(document).ready(function() {
   $(".gridster ul").gridster({
     widget_margins: [10, 10],
     widget_base_dimensions: [140, 140], 
-    draggable: {ignore_dragging: true}
+    max_size_x: 9
   });
 });
