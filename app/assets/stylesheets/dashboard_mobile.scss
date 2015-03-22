@@ -1,0 +1,24 @@
+/* Small devices (tablets, 768px and up) */
+@media (max-width: 700px) {
+  .sidebar-wrapper{
+    position: absolute;
+    top: 60px;
+    left: 10%;
+    width: 80%;
+    overflow: hidden;
+    height: auto
+  }
+  .nav-sidebar-img{
+    display: none !important;
+    position: absolute !important;
+    z-index: -1000 !important;
+  }
+  .sidebar-wrapper ul{
+    margin: 0;
+    display: block;
+  }
+  .sidebar-wrapper ul li{
+    display: inline-block;
+    width: 24%;
+  }
+}

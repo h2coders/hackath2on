@@ -25,6 +25,7 @@
   border-radius: 0;
   overflow-y: auto;
   background-color: #222;
+  min-width: 50px;
 }
 .dashboard{
   position: relative;
@@ -56,7 +57,7 @@
 #week{
   width: 200px;
 }
-.nav-sidebar-img{
+.nav-sidebar-img img{
   width: 60%;
   display:block;
   margin:auto;
