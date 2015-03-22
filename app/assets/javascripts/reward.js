@@ -105,6 +105,22 @@ var ready = function() {
     //            .attr("r", function (d) { return d.radius; })
     //            .style("fill", "#7BC2E9");
 
+    svg.append("text")      // text label for the x axis
+        .attr("x", 45 )
+        .attr("y", 5 )
+        .style("text-anchor", "middle")
+        .style("fill", "white")
+        .html("m&sup3;"+"/hour");
+
+    svg.append("text")      // text label for the x axis
+          .attr("x", 825 )
+          .attr("y", 350 )
+          .style("text-anchor", "middle")
+          .style("fill", "white")
+          .html("hour");
+
+
+
   }
 render();
 }

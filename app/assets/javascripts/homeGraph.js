@@ -14,7 +14,7 @@ var ready = function() {
       .attr("height", height)
       .attr("width", width)
       .append("g")
-        .attr("transform","translate(" + margin.left + "," + margin.right + ")");
+      .attr("transform","translate(" + margin.left + "," + margin.right + ")");
 
   svg.append("rect")
       .attr("width", "100%")
@@ -23,7 +23,7 @@ var ready = function() {
 
   svg.append("text")
      .attr("class", "title")
-     .attr("x", (width / 10))             
+     .attr("x", (width / 2))             
      .attr("y", 10)
      .attr("text-anchor", "middle")  
      .style({'fill': 'white', 'font-size': '20px'}) 
@@ -184,6 +184,21 @@ var ready = function() {
     currentDay = daysOfWeek[position];
     console.log(currentDay);
     console.log(titles);
+
+    svg.append("text")      // text label for the x axis
+        .attr("x", 45 )
+        .attr("y", 5 )
+        .style("text-anchor", "middle")
+        .style("fill", "white")
+        .html("m&sup3;"+"/hour");
+
+    svg.append("text")      // text label for the x axis
+          .attr("x", 825 )
+          .attr("y", 350 )
+          .style("text-anchor", "middle")
+          .style("fill", "white")
+          .html("hour");
+
 }
 
 // initial page render
