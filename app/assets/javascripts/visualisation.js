@@ -153,7 +153,7 @@ for(var i=0; i<currentMinute; i++){
   time = currentHour + parseFloat(i)/60
   data[i] = {
   time: time,
-  usage: retrieveData(currentHour, currentMinute, currentSecond)
+  usage: (retrieveData(currentHour, currentMinute, currentSecond) - 1500)
   };
 }
 data = [data]
