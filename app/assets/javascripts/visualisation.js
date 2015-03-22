@@ -28,11 +28,67 @@ var line = d3.svg.line().interpolate("monotone")
   .x(function(d){ return xScale(d.time); })
   .y(function(d){ return yScale(d.usage); });
 
+
+
+function retrieveData(hour, minutes, seconds){
+  var time = hour*3600 + minutes*60 + seconds;
+      var totalConsumtion = 0;
+      if(time<=3600){
+        totalConsumtion = 400 + Math.floor(Math.random()*350);
+      }else if(time>3600 && time<=7200){
+        totalConsumtion = 600 + Math.floor(Math.random()*350);
+      }else if(time>7200 && time<=10800){
+        totalConsumtion = 700 + Math.floor(Math.random()*350);
+      }else if(time>10800 && time<=14400){
+        totalConsumtion = 950 + Math.floor(Math.random()*350);
+      }else if(time>14400 && time<=18000){
+        totalConsumtion = 1300 + Math.floor(Math.random()*350);
+      }else if(time>18000 && time<=21600){
+        totalConsumtion = 1700 + Math.floor(Math.random()*350);
+      }else if(time>21600 && time<=25200){
+        totalConsumtion = 1900 + Math.floor(Math.random()*350);
+      }else if(time>25200 && time<=28800){
+        totalConsumtion = 2900 + Math.floor(Math.random()*350);
+      }else if(time>28800 && time<=32400){
+        totalConsumtion = 2500 + Math.floor(Math.random()*350);
+      }else if(time>32400 && time<=36000){
+        totalConsumtion = 2100 + Math.floor(Math.random()*350);
+      }else if(time>36000 && time<=39600){
+        totalConsumtion = 1800 + Math.floor(Math.random()*350);
+      }else if(time>39600 && time<=43200){
+        totalConsumtion = 1300 + Math.floor(Math.random()*350);
+      }else if(time>43200 && time<=46800){
+        totalConsumtion = 1200 + Math.floor(Math.random()*350);
+      }else if(time>46800 && time<=50400){
+        totalConsumtion = 1800 + Math.floor(Math.random()*350);
+      }else if(time>50400 && time<=54000){
+        totalConsumtion = 1300 + Math.floor(Math.random()*350);
+      }else if(time>54000 && time<=57600){
+        totalConsumtion = 1200 + Math.floor(Math.random()*350);
+      }else if(time>57600 && time<=61200){
+        totalConsumtion = 1100 + Math.floor(Math.random()*350);
+      }else if(time>61200 && time<=64800){
+        totalConsumtion = 1000 + Math.floor(Math.random()*350);
+      }else if(time>64800 && time<=68400){
+        totalConsumtion = 1100 + Math.floor(Math.random()*350);
+      }else if(time>68400 && time<=72000){
+        totalConsumtion = 1000 + Math.floor(Math.random()*350);
+      }else if(time>72000 && time<=75600){
+        totalConsumtion = 900 + Math.floor(Math.random()*350);
+      }else if(time>75600 && time<=79200){
+        totalConsumtion = 700 + Math.floor(Math.random()*350);
+      }else if(time>79200 && time<=82800){
+        totalConsumtion = 400 + Math.floor(Math.random()*350);
+      };
+    return totalConsumtion
+}
+
+
 // create random data
-function newData(numberOfLines, numberOfPoints){
+function newData(numberOfLines, numberOfPoints, hour, minutes, seconds){
   return d3.range(numberOfLines).map(function(){
-    return d3.range(numberOfPoints).map(function(item, hour){
-      var time = hour*3600;
+    return d3.range(numberOfPoints).map(function(item, number, hour, minutes, seconds){
+      var time = hour*3600 + minutes*60 + seconds;
 
       var totalConsumtion = 0;
       if(time<=3600){
@@ -83,10 +139,25 @@ function newData(numberOfLines, numberOfPoints){
         totalConsumtion = 400 + Math.floor(Math.random()*350);
       }
 
-      return {time:hour,usage: totalConsumtion};
+      return {time: (parseFloat(time)/3600 + hour),usage: totalConsumtion};
     });
   });
 }
+
+
+var currentHour = new Date().getHours();
+var currentMinute = new Date().getMinutes();
+var currentSecond = new Date().getSeconds();
+// console.log(retrieveData(42100))
+var data = [];
+for(var i=0; i<currentMinute; i++){
+  time = currentHour + parseFloat(i)/60
+  data[i] = {
+  time: time,
+  usage: retrieveData(currentHour, currentMinute, currentSecond)
+  };
+}
+data = [data]
 
 // var data = 
 //  [
@@ -109,14 +180,19 @@ function newData(numberOfLines, numberOfPoints){
 
 
 function render(){
-
-
- var data = newData(1,25);
-
- // console.log(data);
+  var currentHour = new Date().getHours();
+  var currentMinute = new Date().getMinutes();
+  var currentSecond = new Date().getSeconds();
+  time = currentHour + parseFloat(currentMinute)/60 + parseFloat(currentSecond) / 3600
+  data[0] << {
+    time: time,
+    usage: retrieveData(currentHour, currentMinute, currentSecond)
+  };
   // set domain for axis
+  firstHour = new Date().getHours();
+  secondHour = new Date().getHours() + 1;
   yScale.domain([0,3000]);
-  xScale.domain([0,24])
+  xScale.domain([firstHour, secondHour])
   // create axis scale
   svg.selectAll('.axis line, .axis path')
      .style({'stroke': 'white', 'fill': 'none', 'stroke-width': '1px'});
