@@ -182,8 +182,6 @@ var ready = function() {
     position = daysOfWeek.indexOf(currentDay) + 1 ;
     position = (position >= daysOfWeek.length) ? 0 : position ;
     currentDay = daysOfWeek[position];
-    console.log(currentDay);
-    console.log(titles);
 }
 
 // initial page render
