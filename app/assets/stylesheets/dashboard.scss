@@ -17,10 +17,10 @@
 .dashboard{
   width: 100%;
 }
-.dashboard-title{
-	font-size:23px;
-	color:white;
-	margin-left: 2px;
+@media (max-width: 350px) {
+  .navbar-brand img{
+    max-width:100px;
+  }
 }
 .gridster{
 	min-width:1000px;
