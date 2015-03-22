@@ -14,7 +14,7 @@ $gray:                   #666;
 $gray-light:             #bbb;
 $gray-lighter:           lighten($gray-base, 93.5%); // #eee
 
-$brand-primary:         #2196F3;
+$brand-primary:         #333333;
 $brand-success:         #4CAF50;
 $brand-info:            #9C27B0;
 $brand-warning:         #ff9800;
@@ -386,7 +386,7 @@ $navbar-default-toggle-border-color:       transparent;
 // Inverted navbar
 // Reset inverted navbar basics
 $navbar-inverse-color:                      $gray-light;
-$navbar-inverse-bg:                         #1b63c5;
+$navbar-inverse-bg:                         #333333;
 $navbar-inverse-border:                     transparent;
 
 // Inverted navbar links

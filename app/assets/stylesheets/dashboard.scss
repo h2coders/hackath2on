@@ -6,6 +6,12 @@
   margin:auto;
 
 }
+
+.panel{
+  border:0px !important;
+  border-radius:5 !important;
+}
+
 .user-menu{
   width:400px; 
   padding: 10px;
@@ -48,7 +54,7 @@
   border: none;
   border-radius: 0;
   overflow-y: auto;
-  background-color: #222;
+  background-color: #333333;
 }
 .icon-center{
 	text-align: center
@@ -56,19 +62,19 @@
 
 .desactive{
 	color: #eee;
-  background-color: #222 ;
+  background-color: #333333 ;
 }
 
 .nav-sidebar li :hover{
-  color: #222;
+  color: #333333;
   background-color: #eee;
 }
 .active{
-  color: #222;
+  color: #333333;
   background-color: #eee;
 }
 .link-black{
-	color: #222;
+	color: #333333;
 }
 .link-white{
 	color: #eee;
