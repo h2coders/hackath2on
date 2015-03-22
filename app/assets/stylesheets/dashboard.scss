@@ -17,6 +17,11 @@
 .dashboard{
   width: 100%;
 }
+.dashboard-title{
+	font-size:23px;
+	color:white;
+	margin-left: 2px;
+}
 .gridster{
 	min-width:1000px;
 }
@@ -30,11 +35,8 @@
 }
 
 .nav-sidebar-img{
-  width: 45%;
-  display:block;
-  margin:auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  width: 7%;
+  margin-left: 50px;
 }
 .sidebar{
   z-index: 102;
