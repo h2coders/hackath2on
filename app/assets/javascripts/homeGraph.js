@@ -139,20 +139,22 @@ var ready = function() {
     // if no axis exists, create one, otherwise update it
     if (svg.selectAll(".y.axis")[0].length < 1 ){
       svg.append("g")
-         .attr("class"," y axis")
+         .attr("class","y axis")
          .attr("fill", "white")
-         .style({'stroke': 'white', 'fill': 'none', 'stroke-width': '1px'})
          .call(yAxis);
 
       svg.append("g")
-         .attr("class", ".x.axis")
+         .attr("class", "x axis")
          .attr("transform", "translate(0," + (height-margin.top-margin.bottom) + ")")
          .attr("fill", "white")
-         .style({'stroke': 'white', 'fill': 'none', 'stroke-width': '1px'})
          .call(xAxis);
     }else {
-      svg.selectAll(" y axis").transition().duration(2000).call(yAxis);
+      svg.selectAll(".y.axis").transition().duration(2000).call(yAxis);
     }
+
+    svg.selectAll('.axis .domain')
+    .style({'stroke': 'white', 'fill': 'none', 'stroke-width': '1px'});
+    
 
     // generate line paths
     var lines = svg.selectAll(".area").data(data).attr("class","area");

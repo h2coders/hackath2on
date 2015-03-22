@@ -56,18 +56,21 @@ var ready = function() {
 
     if (svg.selectAll(".y.axis")[0].length < 1 ){
       svg.append("g")
-         .attr("class",".y axis")
+         .attr("class","y axis")
          .attr("fill", "white")
-         .style({'stroke': 'white', 'fill': 'none', 'stroke-width': '1px'})
          .call(yAxis);
 
       svg.append("g")
-         .attr("class", ".x.axis")
+         .attr("class", "x axis")
          .attr("transform", "translate(0," + (height-margin.top-margin.bottom) + ")")
          .attr("fill", "white")
-         .style({'stroke': 'white', 'fill': 'none', 'stroke-width': '1px'})
          .call(xAxis);
+
     }
+
+    svg.selectAll('.axis .domain')
+    .style({'stroke': 'white', 'fill': 'none', 'stroke-width': '1px'});
+    
     for(var i=0; i<userData.length; i++){
       if(userData[i].radius <= systemData[i].radius){
         svg.append("circle")
