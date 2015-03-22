@@ -8,48 +8,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
- <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Brand</a>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">About us</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Oscar Blanco <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li class="user-menu">
-              <div class="row">
-                <div class="col-sm-4">
-                  <p class="text-center">
-                    <%= image_tag "http://lorempixel.com/200/200/people", :class => "user_img img-circle" %>
-                  </p>
-                </div>
-                <div class="col-sm-8">
-                  <span>Nom Cognom</span>
-                  <p class="text-muted small">mail@gmail.com</p>
-                  <div class="divider">
-                  </div>
-                  <a href="#" class="btn btn-danger btn-sm btn-block">Sortir</a>
-                </div>
-              </div>
-            </li>
-          </ul>
-        </li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
 
 <%= yield %>
 
