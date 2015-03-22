@@ -43,7 +43,7 @@ var ready = function() {
                  .range([0, width - margin.left - margin.right]);
   
   var yScale = d3.scale.linear()
-                 .range([0, height - margin.top - margin.bottom]);
+                 .range([height - margin.top - margin.bottom, 0]);
  
   function render(){
     yScale.domain([0,3000]);
