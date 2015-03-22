@@ -162,7 +162,8 @@ var ready = function() {
     // transition from previous paths to new paths
     lines.transition().duration(2000)
       .attr("d", area)
-      .style("stroke", "white");
+      .style("stroke", "none")
+      .style("stroke-width", "3px");
       
     // enter any new data
     lines.enter()
