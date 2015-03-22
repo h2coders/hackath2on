@@ -198,6 +198,8 @@ var ready = function() {
           .style("fill", "white")
           .html("hour");
 
+}
+
 // initial page render
 render();
 
