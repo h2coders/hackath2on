@@ -5,6 +5,18 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'dashboard#index'
   get 'mobile' => 'dashboard#mobile'
+
+  namespace :api do
+    namespace :v1 do
+      get 'home/:id' => 'water#home'
+      get 'city/:name' => 'water#city'
+      get 'person_average' => 'water#person_average'
+      get 'city_average/' => 'water#city_average'
+      get 'family_average/' => 'water#family_average'
+      get 'postal_code/:id' => 'water#postal_code'
+      get 'country/:name' => 'water#country'
+    end
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

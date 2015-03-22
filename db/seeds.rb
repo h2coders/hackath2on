@@ -5,3 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+1000.times do |index|
+  Consumition.create(
+    consumition_time: (Time.now - 1000.days + index.day),
+    consumition_value: Random.rand(3000)
+    )
+end

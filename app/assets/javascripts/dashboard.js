@@ -19,4 +19,7 @@ $(document).ready(function() {
     widget_base_dimensions: [140, 140], 
     max_size_x: 9
   });
+
+  $(".panel-primary").hide();
+  $(".panel-primary").first().show();
 });
