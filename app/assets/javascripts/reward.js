@@ -49,7 +49,8 @@ var ready = function() {
     yScale.domain([0,3000]);
     xScale.domain([0,24]);
     var yAxis = d3.svg.axis()
-        .scale(yScale).orient("left");
+        .scale(yScale)
+        .orient("left");
 
     var xAxis = d3.svg.axis()
         .scale(xScale).orient("bottom");
@@ -74,24 +75,36 @@ var ready = function() {
     for(var i=0; i<userData.length; i++){
       if(userData[i].radius <= systemData[i].radius){
         svg.append("circle")
+         .attr("r", 0 )
+         .transition()
+         .duration(2000)
          .attr("cx", systemData[i].x/24 * (width - margin.left - margin.right))
          .attr("cy", systemData[i].y )
          .attr("r", systemData[i].radius )
          .style("fill", "#7BC2E9");
 
         svg.append("circle")
+         .attr("r", 0 )
+         .transition()
+         .duration(2000)
          .attr("cx", userData[i].x/24 * (width - margin.left - margin.right))
          .attr("cy", userData[i].y )
          .attr("r", userData[i].radius )
          .style("fill", "#FFF");
       }else{
         svg.append("circle")
+         .attr("r", 0 )
+         .transition()
+         .duration(2000)
          .attr("cx", userData[i].x/24 * (width - margin.left - margin.right))
          .attr("cy", userData[i].y )
          .attr("r", userData[i].radius )
          .style("fill", "#FFF");
 
         svg.append("circle")
+         .attr("r", 0 )
+         .transition()
+         .duration(2000)
          .attr("cx", systemData[i].x/24 * (width - margin.left - margin.right))
          .attr("cy", systemData[i].y )
          .attr("r", systemData[i].radius )
@@ -104,6 +117,22 @@ var ready = function() {
     //            .attr("cy", function (d) { return d.y; })
     //            .attr("r", function (d) { return d.radius; })
     //            .style("fill", "#7BC2E9");
+
+    svg.append("text")      // text label for the x axis
+        .attr("x", 45 )
+        .attr("y", 5 )
+        .style("text-anchor", "middle")
+        .style("fill", "white")
+        .html("m&sup3;"+"/hour");
+
+    svg.append("text")      // text label for the x axis
+          .attr("x", 825 )
+          .attr("y", 350 )
+          .style("text-anchor", "middle")
+          .style("fill", "white")
+          .html("hour");
+
+
 
   }
 render();

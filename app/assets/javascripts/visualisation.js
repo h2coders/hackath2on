@@ -128,7 +128,7 @@ function render(){
         .html("m&sup3;"+"/hour");
 
   svg.append("text")      // text label for the x axis
-        .attr("x", 280 )
+        .attr("x", 350 )
         .attr("y", 200 )
         .style("text-anchor", "middle")
         .html("hour");
