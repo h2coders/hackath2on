@@ -1,6 +1,3 @@
-body{
-  padding-bottom: 60px;
-}
 .container{
   width: 100%;
   height: 100%;
@@ -19,12 +16,17 @@ body{
   top: 0;
   left: 0;
 }
+.mobile-content{
+  margin-top: -20px;
+  width: 100%;
+  height: 100%;
+}
+
 .mobile-content li{
-  display: none;
+  width: 90%;
+  margin: 0 auto;
 }
-.selected{
-  display: block !important;
-}
+
 .inner-widget-container{
   display: flex;
   justify-content: center;
