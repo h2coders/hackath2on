@@ -48,6 +48,7 @@ var ready = function() {
   function render(){
     yScale.domain([0,3000]);
     xScale.domain([0,24]);
+
     var yAxis = d3.svg.axis()
         .scale(yScale)
         .orient("left");
