@@ -10,6 +10,21 @@ body{
   height: 100%;
   display: block;
 }
+.hidding{
+  display: none;
+  visibility: hidden;
+  position: absolute;
+  height: 0;
+  width: 0;
+  top: 0;
+  left: 0;
+}
+.mobile-content li{
+  display: none;
+}
+.selected{
+  display: block !important;
+}
 .inner-widget-container{
   display: flex;
   justify-content: center;
