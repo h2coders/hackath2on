@@ -1,17 +1,31 @@
 var ready = function() {
 
-  var userData = [{"x": 30, "y": 40, "radius": 10},
-              {"x": 70, "y": 70, "radius": 20},
-              {"x": 130, "y": 20, "radius": 30},
-              {"x": 160, "y": 120, "radius": 5},
-              {"x": 190, "y": 90, "radius": 20},
-              {"x": 210, "y": 200, "radius": 20},
-              {"x": 230, "y": 300, "radius": 20},
-              {"x": 260, "y": 25, "radius": 20},
-              {"x": 290, "y": 70, "radius": 20},
-              {"x": 300, "y": 70, "radius": 20},
-              {"x": 350, "y": 70, "radius": 20},
-              {"x": 220, "y": 70, "radius": 20}
+  var userData = [{"x": 0, "y": 150, "radius": 10},
+              {"x": 2, "y": 150, "radius": 20},
+              {"x": 4, "y": 150, "radius": 30},
+              {"x": 6, "y": 150, "radius": 5},
+              {"x": 8, "y": 150, "radius": 20},
+              {"x": 10, "y": 150, "radius": 40},
+              {"x": 12, "y": 150, "radius": 20},
+              {"x": 14, "y": 150, "radius": 35},
+              {"x": 16, "y": 150, "radius": 15},
+              {"x": 18, "y": 150, "radius": 12},
+              {"x": 20, "y": 150, "radius": 17},
+              {"x": 22, "y": 150, "radius": 31}
+              ]
+
+  var systemData = [{"x": 0, "y": 150, "radius": 10},
+              {"x": 2, "y": 150, "radius": 40},
+              {"x": 4, "y": 150, "radius": 25},
+              {"x": 6, "y": 150, "radius": 5},
+              {"x": 8, "y": 150, "radius": 21},
+              {"x": 10, "y": 150, "radius": 15},
+              {"x": 12, "y": 150, "radius": 17},
+              {"x": 14, "y": 150, "radius": 6},
+              {"x": 16, "y": 150, "radius": 20},
+              {"x": 18, "y": 150, "radius": 20},
+              {"x": 20, "y": 150, "radius": 20},
+              {"x": 22, "y": 150, "radius": 20}
               ]
 
   var margin = {top: 20, right:20, bottom:20, left:50};
@@ -42,23 +56,54 @@ var ready = function() {
 
     if (svg.selectAll(".y.axis")[0].length < 1 ){
       svg.append("g")
-         .attr("class",".y axis")
+         .attr("class","y axis")
          .attr("fill", "white")
-         .style({'stroke': 'white', 'fill': 'none', 'stroke-width': '1px'})
          .call(yAxis);
 
       svg.append("g")
-         .attr("class", ".x.axis")
+         .attr("class", "x axis")
          .attr("transform", "translate(0," + (height-margin.top-margin.bottom) + ")")
          .attr("fill", "white")
-         .style({'stroke': 'white', 'fill': 'none', 'stroke-width': '1px'})
          .call(xAxis);
+
     }
-    var userCircles = svg.selectAll("circle").data(userData).enter().append("circle");
-    userCircles.attr("cx", function (d) { return d.x/24 * 24; })
-               .attr("cy", function (d) { return d.y; })
-               .attr("r", function (d) { return d.radius; })
-               .style("fill", "#7BC2E9");
+
+    svg.selectAll('.axis .domain')
+    .style({'stroke': 'white', 'fill': 'none', 'stroke-width': '1px'});
+    
+    for(var i=0; i<userData.length; i++){
+      if(userData[i].radius <= systemData[i].radius){
+        svg.append("circle")
+         .attr("cx", systemData[i].x/24 * (width - margin.left - margin.right))
+         .attr("cy", systemData[i].y )
+         .attr("r", systemData[i].radius )
+         .style("fill", "#7BC2E9");
+
+        svg.append("circle")
+         .attr("cx", userData[i].x/24 * (width - margin.left - margin.right))
+         .attr("cy", userData[i].y )
+         .attr("r", userData[i].radius )
+         .style("fill", "#FFF");
+      }else{
+        svg.append("circle")
+         .attr("cx", userData[i].x/24 * (width - margin.left - margin.right))
+         .attr("cy", userData[i].y )
+         .attr("r", userData[i].radius )
+         .style("fill", "#FFF");
+
+        svg.append("circle")
+         .attr("cx", systemData[i].x/24 * (width - margin.left - margin.right))
+         .attr("cy", systemData[i].y )
+         .attr("r", systemData[i].radius )
+         .style("fill", "#7BC2E9");
+      }
+
+    }
+    // var userCircles = svg.selectAll("circle").data(userData).enter().append("circle");
+    // userCircles.attr("cx", function (d) { return d.x/24 * (width - margin.left - margin.right); })
+    //            .attr("cy", function (d) { return d.y; })
+    //            .attr("r", function (d) { return d.radius; })
+    //            .style("fill", "#7BC2E9");
 
   }
 render();
