@@ -88,25 +88,6 @@ function newData(numberOfLines, numberOfPoints){
   });
 }
 
-// var data = 
-//  [
-//   [
-//     {
-//       "time": 0,
-//       "usage": 99.0092993946746
-//     },
-//     {
-//       "time": 0.5,
-//       "usage": 40.64327261876315
-//     },
-//     {
-//       "time": 1,
-//       "usage": 98.616778338328
-//     }
-//   ]
-// ];
-
-
 
 function render(){
 
@@ -144,13 +125,17 @@ function render(){
   if (svg.selectAll(".y.axis")[0].length < 1 ){
     svg.append("g")
         .attr("class","y axis")
+        .attr("fill", "white")
+        .attr("stroke-width", "3px")
         .call(yAxis);
     svg.append("g")
        .attr("class", "x axis")
+       .attr("fill", "white")
+       .attr("stroke-width", "3px")
        .attr("transform", "translate(0," + (height-margin.top-margin.bottom) + ")")
        .call(xAxis);
   } else {
-    svg.selectAll(".y.axis").transition().duration(1000).call(yAxis);
+    svg.selectAll(".y.axis").attr("fill", "white").attr("stroke-width", "3px").transition().duration(1000).call(yAxis);
   }
 
   // generate line paths

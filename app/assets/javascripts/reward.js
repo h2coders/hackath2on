@@ -48,6 +48,7 @@ var ready = function() {
   function render(){
     yScale.domain([0,3000]);
     xScale.domain([0,24]);
+
     var yAxis = d3.svg.axis()
         .scale(yScale)
         .orient("left");
@@ -76,39 +77,39 @@ var ready = function() {
       if(userData[i].radius <= systemData[i].radius){
         svg.append("circle")
          .attr("r", 0 )
+         .style("fill", "#7BC2E9")
          .transition()
          .duration(2000)
          .attr("cx", systemData[i].x/24 * (width - margin.left - margin.right))
          .attr("cy", systemData[i].y )
-         .attr("r", systemData[i].radius )
-         .style("fill", "#7BC2E9");
+         .attr("r", systemData[i].radius );
 
         svg.append("circle")
          .attr("r", 0 )
+         .style("fill", "#FFF")
          .transition()
          .duration(2000)
          .attr("cx", userData[i].x/24 * (width - margin.left - margin.right))
          .attr("cy", userData[i].y )
-         .attr("r", userData[i].radius )
-         .style("fill", "#FFF");
+         .attr("r", userData[i].radius );
       }else{
         svg.append("circle")
          .attr("r", 0 )
+         .style("fill", "#FFF")
          .transition()
          .duration(2000)
          .attr("cx", userData[i].x/24 * (width - margin.left - margin.right))
          .attr("cy", userData[i].y )
-         .attr("r", userData[i].radius )
-         .style("fill", "#FFF");
+         .attr("r", userData[i].radius );
 
         svg.append("circle")
          .attr("r", 0 )
+         .style("fill", "#7BC2E9")
          .transition()
          .duration(2000)
          .attr("cx", systemData[i].x/24 * (width - margin.left - margin.right))
          .attr("cy", systemData[i].y )
-         .attr("r", systemData[i].radius )
-         .style("fill", "#7BC2E9");
+         .attr("r", systemData[i].radius );
       }
 
     }

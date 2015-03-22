@@ -35,11 +35,10 @@ var ready = function() {
   var yScale = d3.scale.linear()
         .range([height - margin.top - margin.bottom, 0]);
 
-  var area = d3.svg.area()
+  var line = d3.svg.line()
     .interpolate("monotone")
     .x(function(d){ return xScale(d.time); })
-    .y0(height - margin.top - margin.bottom)
-    .y1(function(d){ return yScale(d.usage); });
+    .y(function(d){ return yScale(d.usage); });
 
   // create random data
   function newData(numberOfLines, numberOfPoints){
@@ -157,20 +156,22 @@ var ready = function() {
     
 
     // generate line paths
-    var lines = svg.selectAll(".area").data(data).attr("class","area");
+    var lines = svg.selectAll(".line").data(data).attr("class","line");
     
     // transition from previous paths to new paths
     lines.transition().duration(2000)
-      .attr("d", area)
-      .style("stroke", "none")
+      .attr("d", line)
+      .style("fill", "none")
       .style("stroke-width", "3px");
       
     // enter any new data
     lines.enter()
       .append("path")
-      .attr("class","area")
-      .attr("d", area)
-      .style("stroke", "white");
+      .attr("class","line")
+      .attr("d", line)
+      .style("stroke-width", "3px")
+      .style("stroke", "white")
+      .style("fill", "none");
 
     // console.log(lines.data());
 
