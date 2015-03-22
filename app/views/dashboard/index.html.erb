@@ -2,11 +2,10 @@
   <div class="col-sm-2 sidebar">
     <div class ="sidebar-wrapper">
       <ul class="nav nav-sidebar">
-        <li><%= image_tag "icon.svg", :class=>"nav-sidebar-img" %></li>
         <li class="active"><a class="link-black icon-center"href="/"><i class="fa fa-tachometer fa-4x"></i><p class="text-center">Dashboard</p></a></li>
-        <li class="desactive"><a class="link-white icon-center" href="#"><i class="fa fa-envelope-o fa-4x"></i><p class="text-center">Test</p></a></li>
-        <li class="desactive"><a class="link-white icon-center" href="#"><i class="fa fa-calendar fa-4x"></i><p class="text-center">Test</p></a></li>
-        <li class="desactive"><a class="link-white icon-center" href="#"><i class="fa fa-wrench fa-4x"></i><p class="text-center">Tests</p></a></li>
+        <li class="desactive"><a class="link-white icon-center" href="#"><i class="fa fa-envelope-o fa-4x"></i><p class="text-center">Notifications</p></a></li>
+        <li class="desactive"><a class="link-white icon-center" href="#"><i class="fa fa-calendar fa-4x"></i><p class="text-center">Calendar</p></a></li>
+        <li class="desactive"><a class="link-white icon-center" href="#"><i class="fa fa-wrench fa-4x"></i><p class="text-center">Settings</p></a></li>
       </ul>
       <ul class="nav nav-sidebar">
     </div>
@@ -19,7 +18,7 @@
             <div class="widget-container">
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Usage within Barcelona during each day of the week.<i class="fa fa-eye close"></i></h3>
+                  <h3 class="panel-title">Water consumption - Home<i class="fa fa-eye close"></i></h3>
                 </div>
                 <div class="inner-widget-container home-panel">
                   <%= render partial: "dashboard/tables/homes" %>
@@ -31,7 +30,7 @@
             <div class="widget-container">
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Total Savings<i class="fa fa-eye close"></i></h3>
+                  <h3 class="panel-title">My savings<i class="fa fa-eye close"></i></h3>
                 </div>
                 <div class="inner-widget-container">
                   <%= render partial: "dashboard/tables/last_one" %>
@@ -43,7 +42,7 @@
             <div class="widget-container">
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <h3 class="panel-title">User versus System<i class="fa fa-eye close"></i></h3>
+                  <h3 class="panel-title">My Home versus System<i class="fa fa-eye close"></i></h3>
                 </div>
                 <div class="inner-widget-container reward">
                   <%= render partial: "dashboard/tables/reward" %>
@@ -55,7 +54,7 @@
             <div class="widget-container">
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+                  <h3 class="panel-title">System efficiency<i class="fa fa-eye close"></i></h3>
                 </div>
                 <div class="inner-widget-container total-saving">
                   <%= render partial: "dashboard/tables/week" %>
@@ -67,7 +66,7 @@
             <div class="widget-container">
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Usage of Water compared by Location<i class="fa fa-eye close"></i></h3>
+                  <h3 class="panel-title">Water consumption by neighborhood<i class="fa fa-eye close"></i></h3>
                 </div>
                 <div class="inner-widget-container">
                   <%= render partial: "dashboard/tables/total_saving" %>
@@ -79,7 +78,7 @@
             <div class="widget-container">
               <div class="panel panel-primary">
                 <div class="panel-heading">
-                  <h3 class="panel-title">Water Usage in my House<i class="fa fa-eye close"></i></h3>
+                  <h3 class="panel-title">Water consumption - System<i class="fa fa-eye close"></i></h3>
                 </div>
                 <div class="inner-widget-container">
                   <%= render partial: "dashboard/tables/system" %>

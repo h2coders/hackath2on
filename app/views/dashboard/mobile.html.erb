@@ -20,49 +20,109 @@
 <nav>
   
 </nav>
-<div class="container">
-  <div id="#one" class="showing">qwerty</div>
-  <div id="#two" class="">qwerty</div>
-  <div id="#three" class="">qwerty</div>
-  <div id="#four" class="">qwerty</div>
-  <div id="#five" class="">qwerty</div>
-  <div id="#six" class="">qwerty</div>
-</div>
+<ul class="mobile-content">
+  <li data-content="home" class="selected">
+    <div class="widget-container">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Water consumption - Home<i class="fa fa-eye close"></i></h3>
+        </div>
+        <div class="inner-widget-container home-panel">
+          <%= render partial: "dashboard/tables/homes" %>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li data-content="savings">            
+    <div class="widget-container">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">My savings<i class="fa fa-eye close"></i></h3>
+        </div>
+        <div class="inner-widget-container">
+          <%= render partial: "dashboard/tables/last_one" %>
+        </div> 
+      </div>
+    </div>
+  </li>
+  <li data-content="versus">            
+    <div class="widget-container">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">My Home versus System<i class="fa fa-eye close"></i></h3>
+        </div>
+        <div class="inner-widget-container reward">
+          <%= render partial: "dashboard/tables/reward" %>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li data-content="efficiency">            
+    <div class="widget-container">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">System efficiency<i class="fa fa-eye close"></i></h3>
+        </div>
+        <div class="inner-widget-container total-saving">
+          <%= render partial: "dashboard/tables/week" %>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li data-content="neighborhood">            
+    <div class="widget-container">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Water consumption by neighborhood<i class="fa fa-eye close"></i></h3>
+        </div>
+        <div class="inner-widget-container">
+          <%= render partial: "dashboard/tables/total_saving" %>
+        </div>
+      </div>
+    </div>
+  </li>
+  <li data-content="consumption">            
+    <div class="widget-container">
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Water consumption - System<i class="fa fa-eye close"></i></h3>
+        </div>
+        <div class="inner-widget-container">
+          <%= render partial: "dashboard/tables/system" %>
+        </div>
+      </div>
+    </div>
+  </li>
+</ul>
 <footer class="tabbar">
   <ul>
     <li class="active">
-      <a href="#" data-container="#one">
-        <i class="fa fa-tachometer fa-2x"></i>
+      <a href="#" class="selected" data-content="home"><i class="fa fa-tachometer fa-2x"></i>
         <p class="text-center">Hola</p>
       </a>
     </li>
     <li class="">
-      <a href="#" data-container="#two">
-        <i class="fa fa-envelope-o fa-2x"></i>
+      <a href="#" data-content="savings"><i class="fa fa-envelope-o fa-2x"></i>
         <p class="text-center">Water Usage</p>
       </a>
     </li>
     <li class="">
-      <a href="#" data-container="#three">
-        <i class="fa fa-calendar fa-2x"></i>
+      <a href="#" data-content="versus"><i class="fa fa-calendar fa-2x"></i>
         <p class="text-center">Usage of Water compared by Location</p>
       </a>
     </li>
     <li class="">
-      <a href="#" data-container="#four">
-        <i class="fa fa-wrench fa-2x"></i>
+      <a href="#" data-content="efficiency"><i class="fa fa-wrench fa-2x"></i>
         <p class="text-center">Total Savings</p>
       </a>
     </li>
     <li class="">
-      <a href="#" data-container="#five">
-        <i class="fa fa-wrench fa-2x"></i>
+      <a href="#" data-content="neighborhood"><i class="fa fa-wrench fa-2x"></i>
         <p class="text-center">Hola</p>
       </a>
     </li>
     <li class="">
-      <a href="#" data-container="#six">
-        <i class="fa fa-wrench fa-2x"></i>
+      <a href="#"  data-content="consumption"><i class="fa fa-wrench fa-2x"></i>
         <p class="text-center">Hola</p>
       </a>
     </li>
