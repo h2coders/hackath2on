@@ -21,12 +21,21 @@
   
 </nav>
 <div class="container">
-  <div id="#one" class="showing">qwerty</div>
-  <div id="#two" class="">qwerty</div>
-  <div id="#three" class="">qwerty</div>
-  <div id="#four" class="">qwerty</div>
-  <div id="#five" class="">qwerty</div>
-  <div id="#six" class="">qwerty</div>
+  <div id="#one" class="innerContainer showing">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title">Panel title<i class="fa fa-eye close"></i></h3>
+      </div>
+      <div class="inner-widget-container home-panel">
+        <%= render partial: "dashboard/tables/homes" %>
+      </div>
+    </div>
+  </div>
+  <div id="#two" class="innerContainer "><%= render partial: "dashboard/tables/last_one" %></div>
+  <div id="#three" class="innerContainer "><%= render partial: "dashboard/tables/reward" %></div>
+  <div id="#four" class="innerContainer "><%= render partial: "dashboard/tables/system" %></div>
+  <div id="#five" class="innerContainer "><%= render partial: "dashboard/tables/total_saving" %></div>
+  <div id="#six" class="innerContainer "><%= render partial: "dashboard/tables/week" %></div>
 </div>
 <footer class="tabbar">
   <ul>
